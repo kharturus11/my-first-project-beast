@@ -1,0 +1,180 @@
+/*! Стилизация main-information  */
+
+.main-information {
+    margin-bottom: 96px;
+}
+
+.main-information-inner {
+    display: flex;
+    column-gap: 106px;
+    padding-top: 44px;
+}
+
+.main-information-role {
+    color: var(--color-light-gray);
+}
+
+.main-information-description:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.main-information-contacts {
+    display: flex;
+    column-gap: 30px;
+} 
+
+.main-information-contacts:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.main-information-contacts-phone {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.main-information-contacts-phone-number {
+    display: inline-flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-green);
+    /* если мы не зададим фиксированную ширину, то нижняя рамка растянется на весь flex контейнер, а нам это не нужно */
+    width: 180px;
+    height: 35px;
+    border-bottom: 2px solid currentColor;
+}
+
+.main-information-contacts-phone-description {
+    font-size: 12px;
+    color: var(--color-light-gray);
+}
+
+.main-information-features-list {
+    display: flex;
+    column-gap: 30px;
+}
+
+.main-information-features-item {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.main-information-image {
+    display: inline-flex;
+    align-items: center;
+    margin-top: -44px;
+}
+
+.main-information-image img {
+    height: auto;
+}
+
+/*! Медиазапросы  */
+
+@media (max-width: 1200px) {
+    .main-information-inner {
+        column-gap: 20px;
+    }
+    
+    .main-information-body {
+        width: 65%;
+    }
+
+    .main-information-image img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 993px) {
+    .main-information {
+        margin-bottom: 40px;
+    }
+
+    .main-information-inner {
+        flex-direction: column-reverse;
+        /* центрирование элементов во flex контейнере по горизонтали */
+        align-items: center;
+        column-gap: 0px;
+        row-gap: 20px;
+    }
+
+    .main-information-body {
+        width: 100%;
+    }
+
+    .main-information-role:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    .main-information-description {
+        text-align: center;
+    }
+
+    .main-information-description:not(:last-child) {
+        margin-bottom: 29px;
+    }
+
+    .main-information-contacts {
+        justify-content: center;
+    }
+
+    .main-information-features-list {
+        margin-bottom: 20px;
+    }
+
+    .main-information-features-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .main-information-image img {
+        width: 235px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .main-information-description:not(:last-child) {
+        margin-bottom: 29px;
+    }
+
+    .main-information-contacts-button {
+        display: flex;
+        justify-content: center;
+    }
+
+    .main-information-contacts-button:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    .main-information-contacts {
+        flex-direction: column;
+    }
+
+    .main-information-contacts-phone {
+        align-items: center;
+    }
+
+    .main-information-features-list {
+        font-size: 14px;
+    }
+
+    .around-the-clock {
+        order: -2; 
+    }
+
+    .fast {
+        order: 0;
+    }
+    
+    .free {
+        order: 1;
+    }
+
+    .confidential {
+        order: 1;
+    }
+}

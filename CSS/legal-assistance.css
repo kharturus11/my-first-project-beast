@@ -1,0 +1,17 @@
+/*! секция юридической помощи (section: legal-assistance)  */
+
+.legal-assistance-title:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.legal-assistance-description:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+/*! Медиазапросы  */
+
+@media (max-width: 700px) {
+    .legal-assistance-title:not(:last-child) {
+        margin-bottom: 15px;
+    }
+}

@@ -1,0 +1,228 @@
+.why-us {
+    padding-top: 29px;
+}
+
+.why-us-top {
+    display: flex;
+    column-gap: 20px;
+}
+
+.why-us-title:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.why-us-description:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.why-us-features-list {
+    display: flex;
+    column-gap: 40px;
+}
+
+.why-us-features-item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.why-us-features-title {
+    color: var(--color-green);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.why-us-features-text {
+    line-height: 1.375;
+}
+
+.why-us-image {
+    margin-top: -29px;
+}
+
+
+/*! Стилизация элемента с зеленым фоном */
+
+/* Высота why-us-bottom - как и в макете - 200 пикселей.  */
+
+.why-us-bottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Выравниваем контент в грид сетке по центру по вертикали, как это сделано в макете */
+    align-items: center;
+    padding-block: 31px 34px;
+    background-color: var(--color-green);
+    border-radius: 20px;
+    padding-inline: 60px;
+}
+
+.why-us-bottom-tel {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    color: var(--color-white);
+}
+
+.why-us-bottom-tel-text {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.375;
+}
+
+.why-us-bottom-tel-link {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.03em;
+}
+
+
+.why-us-form-title {
+    color: var(--color-white);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.38;
+}
+
+.why-us-form-title:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.why-us-form:not(:last-child) {
+    margin-bottom: 22px;
+}
+
+/*! Стилизация кастомного инпута  */
+
+.why-us-form-field {
+    width: 249px;
+}
+
+.why-us-form-button {
+    border: 1px solid var(--color-white);
+}
+
+.why-us-form-agreement-text {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+/*! Адаптация  */
+
+@media (max-width: 1200px) {
+    .why-us-features-list {
+        margin-bottom: 40px;
+    }
+
+    .why-us-image {
+        width: 420px;
+        height: auto;
+    }
+}
+
+@media (max-width: 993px) {
+    .why-us-top {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .why-us-title:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    .why-us-description:not(:last-child) {
+        margin-bottom: 25px;
+    }
+
+    .why-us-image {
+        width: 500px;
+    }
+
+    .why-us-bottom {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .why-us-bottom-tel:not(:last-child) {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 700px) {
+    .why-us-top {
+        row-gap: 30px;
+    }
+
+    .why-us-features-list {
+        column-gap: 30px;
+        margin-bottom: 0px;
+    }
+
+    .why-us-features-title {
+        font-size: 20px;
+    }
+
+    .why-us-features-text {
+        font-size: 12px;
+    }
+
+    .why-us-image {
+        width: 360px;
+        height: auto;
+        margin-top: 0px;
+    }
+
+    .why-us-bottom-text {
+        row-gap: 5px;
+    }
+
+    .why-us-bottom-tel {
+        row-gap: 5px;
+    }
+
+    .why-us-bottom-tel-text {
+        font-size: 18px;
+    }
+
+    .why-us-bottom-tel-link {
+        font-size: 36px;
+    }
+
+    .why-us-form-title {
+        font-size: 16px;
+    }
+
+    .why-us-form-field {
+        width: 100%;
+    }
+
+    .why-us-form-title:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    .why-us-form:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    .why-us-form-button {
+        height: 53px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    .why-us-image {
+        width: 200px;
+    }
+}
+
+@media (max-width: 380px) {
+    .why-us-features-list {
+        align-items: center;
+    }
+
+    .why-us-features-text {
+        font-size: 10px;
+    }
+}

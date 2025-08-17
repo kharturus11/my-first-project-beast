@@ -1,0 +1,61 @@
+.reference {
+    margin-bottom: 274px;
+}
+
+.reference-title:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.reference-global-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 20px;
+}
+
+.reference-global-item-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.375;
+}
+
+.reference-global-item-title:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.reference-local-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.reference-local-link {
+    line-height: 1.375;
+}
+.reference-local-link:hover {
+    text-decoration: underline;
+}
+
+/*! Медиазапросы */
+
+@media (max-width: 700px) {
+    .reference {
+        margin-bottom: 157px;
+    }
+
+    .reference-title:not(:last-child) {
+        margin-bottom: 30px;
+    }
+
+    .reference-global-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 10px;
+    }
+
+    .reference-global-item-title {
+        font-size: 18px;
+    }
+
+    .reference-local-link {
+        font-size: 12px;
+    }
+}

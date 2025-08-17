@@ -1,0 +1,43 @@
+/*! мобильная версия header  */
+
+.mobile-header {
+    display: none;
+    padding: 15px;
+    border-bottom: var(--border);
+    margin-bottom: 20px;
+}
+
+.mobile-header-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mobile-header-burger-button {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.mobile-header-right {
+    display: flex;
+    column-gap: 15px;
+}
+
+.mobile-header-right-search-button,
+.mobile-header-right-guest-button {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.mobile-header-logo-image {
+    display: block;
+}
+
+/*! Медиазапросы  */
+
+@media (max-width: 993px) {
+    .mobile-header {
+        display: block;
+    }
+}

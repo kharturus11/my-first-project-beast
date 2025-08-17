@@ -1,0 +1,161 @@
+/*! стилизация header-bottom  */
+
+.header {
+    padding-block: 40px 45px;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    height: 52px;
+}
+
+.header-top:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.header-logo-image {
+    display: block;
+    height: auto;
+}
+
+.header-input {
+    /* относительное позиционирование для кнопки поиска */
+    position: relative;
+    height: 100%;
+    /*! Элемент постарается занять в 2 раза больше пространства, чем его соседи */
+    flex-grow: 2;
+}
+
+.header-input-element {
+    background-color: rgba(47, 43, 67, 0.04);
+    padding-inline: 20px;
+    padding-right: 70px;
+    border-radius: var(--border-radius);
+    outline: none;
+    transition: none;
+    height: 100%;
+    width: 100%;
+}
+
+.header-input-element:focus {
+    /* используем свойство outline, потому что оно не влияет на размеры элемента */
+    outline: 2px solid var(--color-green);
+}
+
+.header-input-element::placeholder {
+    color: rgba(47, 43, 67, 0.4);
+}
+
+.header-input-search-button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.header-top-button {
+    /* так как высота элемента больше высоты контейнера */
+    height: 100%;
+}
+
+.header-contacts {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.header-contacts-telephone {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.header-contacts-telephone:hover {
+    color: var(--color-green);
+}
+
+.header-contacts-description {
+    font-size: 14px;
+    color: var(--color-light-gray);
+}
+
+/*! стилизация header-bottom */
+
+.header-bottom {
+    display: flex;
+    align-items: center;
+    column-gap: 51.5px;
+    justify-content: space-between;
+}
+
+.header-bottom-buttons {
+    display: flex;
+    column-gap: 15px;
+} 
+
+.header-bottom-button {
+    font-weight: 400;
+    color: var(--color-dark);
+    /* так как этот элемент имеет наибольшую высоту во флекс контейнере, следовательно флэкс контейнер имеет высоту этого элемента */
+    height: 44px;
+    border: var(--border);
+}
+
+.header-bottom-button:hover {
+    border-color: var(--color-green);
+}
+
+.header-bottom-nav-list {
+    display: flex;
+    column-gap: 30px;
+}
+
+.header-bottom-nav-link:hover {
+    color: var(--color-green);
+}
+
+.header-bottom-button-modal {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    cursor: pointer;
+}
+
+.header-bottom-button-modal-description:hover {
+    color: var(--color-green);
+}
+
+/*! Медиазапросы  */
+
+@media (max-width: 1200px) {
+    .header-logo-image {
+        width: 182px;
+    }
+
+    .header-bottom-button-span {
+        clip: rect(0 0 0 0) !important;
+        clip-path: inset(50%) !important;
+        height: 1px !important;
+        overflow: hidden !important;
+        position: absolute !important;
+        white-space: nowrap !important;
+        width: 1px !important;
+    }
+
+    .header-bottom-nav-item {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 993px) {
+    .header {
+        padding-block: 0px;
+    }
+
+    .header-inner {
+        display: none;
+    }
+}

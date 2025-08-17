@@ -1,0 +1,66 @@
+.specialties-title:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.specialties-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    overflow: auto;
+}
+
+.specialties-item {
+    height: 287px;
+    border: var(--border);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.specialties-card-title-wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 17.25px;
+}
+
+.specialties-card-title-wrapper:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.specialties-card-title {
+    padding-bottom: 5px;
+    font-weight: 600;
+    line-height: 1.375;
+    border-bottom: 1px solid var(--color-green);
+}
+
+.specialties-card-description {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-dark-gray);
+}
+
+/*! Медиазапросы  */
+
+@media (max-width: 1200px) {
+    .specialties-item {
+        height: 330px;
+    }
+}
+
+@media (max-width: 993px) {
+    .specialties-card-title-wrapper:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    .specialties-list {
+        grid-template-columns: repeat(8, 319.5px);
+    }
+
+    .specialties-item {
+        height: 344px;
+    }
+
+    .specialties-card-description {
+        font-size: 12px;
+    }
+}

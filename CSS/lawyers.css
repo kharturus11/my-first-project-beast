@@ -1,0 +1,315 @@
+.lawyers-title:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.lawyers-body {
+    display: grid;
+    grid-template-columns: 463px 1fr;
+    column-gap: 20px;
+}
+
+.lawyers-left {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.lawyers-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.lawyers-item {
+    /* height: 124px; */
+    border: var(--border);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.lawyers-card {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.lawyers-card-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.lawyers-card-name {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.38;
+}
+
+.lawyers-card-name:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.lawyers-card-town {
+    line-height: 1.375;
+}
+
+.lawyers-card-town:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.lawyers-card-consultations {
+    color: var(--color-light-gray);
+    line-height: 1.375;
+}
+
+/*! При flex-direction со значением row, flex элементы по умолчанию растягиваются на всю ширину контейнера, чтобы заполнить все пространство  */
+/* .lawyers-button {
+    width: 100%;
+} */
+
+.lawyers-form-body {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 40px 0 40px;
+    background-color: var(--color-green);
+    border-radius: 20px;
+}
+
+.lawyers-form-head {
+    /* для элемента с текстом онлайн */
+    position: relative;
+    color: var(--color-white);
+}
+
+.lawyers-online-mark {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 5px;
+    height: 33px;
+    padding-inline: 16px;
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    border-radius: var(--border-radius);
+    line-height: 1.375;
+}
+
+.lawyers-online-mark::before {
+    content: '';
+    background-color: #12b76a;
+    border-radius: 50%;
+    width: 12px;
+    aspect-ratio: 1;
+}
+
+.lawyers-form-head:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.lawyers-form-title {
+    font-size: 32px;
+}
+
+.lawyers-form-title:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.lawyers-form-description {
+    font-size: 18px;
+    line-height: 1.38;
+}
+
+.lawyers-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.lawyers-form-textarea {
+    height: 213px;
+    padding: 12px 16px;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    outline: none;
+}
+
+.lawyers-form-textarea::placeholder {
+    color: var(--color-dark-gray);
+}
+
+.lawyers-form-main {
+    display: grid;
+    grid-template-columns: repeat(2, 205px) 1fr;
+    gap: 15px;
+}
+
+.lawyers-form-main{
+    margin-bottom: 15px;
+}
+
+.lawyers-agreement-text:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.lawyers-online-list {
+    color: var(--color-white);
+    display: flex;
+    column-gap: 40px;
+}
+
+.lawyers-online-item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.lawyers-online-title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.35;
+}
+
+.lawyers-online-text {
+    line-height: 1.375;
+}
+
+/*! Медиазапросы */
+
+@media (max-width: 1200px) {
+
+    .lawyers-form-body {
+        padding-top: 20px;
+    }
+
+    .lawyers-online-mark {
+        position: static;
+    }
+
+    .lawyers-online-mark:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    .lawyers-form-textarea {
+        height: 150px;
+    }
+
+    .lawyers-form-main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .lawyers-form-button {
+        grid-column: 1 / -1;
+    }
+
+    .lawyers-agreement-text:not(:last-child) {
+        margin-bottom: 20px;
+   }
+
+}
+
+@media (max-width: 993px) {
+    .lawyers-form-body {
+        padding: 20px;
+    }
+
+    .lawyers-body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 514px 1fr;
+        row-gap: 40px;
+    }
+
+    .lawyers-left {
+        row-gap: 10px;
+    }
+}
+
+@media (max-width: 700px) {
+    .lawyers-title:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    .lawyers-form-body {
+        padding: 20px;
+    }
+
+    .lawyers-online-mark {
+        font-size: 12px;
+    }
+
+    .lawyers-list {
+        row-gap: 10px;
+    }
+
+    .lawyers-item {
+        height: 106px;
+    }
+
+    .lawyers-card-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .lawyers-card-name {
+        font-size: 14px;
+    }
+
+    .lawyers-card-town {
+        font-size: 12px;
+    }
+
+    .lawyers-card-consultations {
+        font-size: 12px;
+    }
+
+    .lawyers-form-head:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    .lawyers-form-title {
+        font-size: 20px;
+    }
+
+    .lawyers-form-title:not(:last-child) {
+        margin-bottom: 5px;
+    }
+
+    .lawyers-form-description {
+        font-size: 12px;
+    } 
+    
+    .lawyers-form {
+        row-gap: 15px;
+    }
+
+    .lawyers-form-textarea {
+        height: 180px;
+    }
+
+    .lawyers-form-main {
+        grid-template-columns: 1fr;
+    }
+
+    .lawyers-agreement-text:not(:last-child) {
+        margin-bottom: 15px;
+    }
+    
+    .lawyers-online-list {
+        column-gap: 30px;
+    }
+
+    .lawyers-online-item {
+        row-gap: 5px;
+    } 
+
+    .lawyers-online-title {
+        font-size: 16px;
+    }
+
+    .lawyers-online-text {
+        font-size: 12px;
+    } 
+
+}

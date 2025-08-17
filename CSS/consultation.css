@@ -1,0 +1,286 @@
+.consultation-title:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.consultation-description:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.consultation-list {
+    display: grid;
+    /* 1/4 все ширины грид контейнера */
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+}
+
+.consultation-item {
+    padding: 20px;
+    border: var(--border);
+    border-radius: 20px;
+}
+
+.consultation-card {
+    display: flex;
+    /* так как флэкс контейнер по умолчанию имеет высоту, равную внутреннему содержимому, исправим это, добавив свойсвто height со значением 100% */
+    height: 100%;
+    flex-direction: column;
+    /* теперь главная ось вертикальная, побочная - перпендекулярна ей, соответсвенно побочная ось горизонтальная */
+    justify-content: space-between;
+    row-gap: 15px;
+}
+
+.consultation-card-description {
+    line-height: 1.375;
+}
+
+.consultation-card-telephone {
+    /* делаем так, чтобы ширина элемента равнялась ширине внутреннего содержимого */
+    width: min-content;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.35;
+    white-space: nowrap;
+}
+
+.consultation-card-telephone:hover {
+    color: var(--color-green);
+}
+
+.consultation-card-button {
+    /* делаем так, чтобы ширина элемента равнялась ширине внутреннего содержимого */
+    width: min-content;
+    color: var(--color-green);
+    font-weight: 600;
+    line-height: 1.375;
+    white-space: nowrap;
+}
+
+.consultation-card-button:hover {
+    color: var(--color-dark);
+}
+
+.consultation-bottom {
+    /* Относительное позиционирование нужно для вседвоэлемента */
+    position: relative;
+    display: grid;
+    grid-template-columns: 320px 1fr 1fr;
+    align-items: center;
+    color: var(--color-white);
+    background-color: var(--color-green);
+    border-radius: 20px;
+    /* Используем свойство overflow со значением hidden для того, чтобы псевдоэлемент не выпирал за рамки блока */
+    overflow: hidden;
+}
+
+/* Реализовываю элемент круга под изображением через псевдоэлемент before */
+
+.consultation-bottom::before {
+    content: '';
+    position: absolute;
+    width: 399px;
+    aspect-ratio: 1;
+    background-color: rgba(20, 10, 50, 0.2);
+    border-radius: 50%;
+    top: 20%;
+    left: -10%;
+}
+
+.consultation-bottom-image-wrapper {
+    /* Относительное позиционирование и последующее применение свойства z-index со значением 1 для того, чтобы псевдоэлемент не перекрывал изображение */
+    position: relative;
+    z-index: 1;
+    margin-left: 15px;
+}
+
+.consultation-bottom-image {
+    margin-bottom: -3px;
+}
+
+.consultation-bottom-information  {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.consultation-bottom-description {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.38;
+}
+
+.consultation-bottom-telephone {
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.36;
+}
+
+.consultation-bottom-lawyers {
+    /* Относительное позиционирование и дальнейшее применение свойства z-index со значением 1 нужно для адаптации, чтобы блок перекрывал псевдоэлемент */
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.consultation-bottom-lawyers-description {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.38;
+}
+
+.consultation-bottom-lawyers-list {
+    display: flex;
+}
+
+.consultation-bottom-lawyers-item:not(:first-child) {
+    margin-left: -30px;
+}
+
+/* Стилизуем сразу тег ссылки. Даже не придется увеличивать область нажатия ссылки.  */
+
+.consultation-bottom-lawyers-item:last-child a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 62px;
+    aspect-ratio: 1;
+    font-weight: 600;
+    background-color: var(--color-white);
+    color: var(--color-light-gray);
+    border-radius: 50%;
+}
+
+/*! Адаптация */
+
+@media (max-width: 1200px) {
+    .consultation-bottom-lawyers {
+        align-items: center;
+    }
+}
+
+@media (max-width: 993px) {
+    .consultation-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .consultation-bottom {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 109px auto;
+        /* возвращаем выравнивание по умолчанию, с помощью значения normal */
+        align-items: normal;
+    }
+
+    /* корректируем положение кргуа */
+    .consultation-bottom::before {
+        top: 50%;
+        left: -20%;
+    }
+
+    .consultation-bottom-image-wrapper {
+        width: 213px;
+        height: 182px;
+        margin-left: -20px;
+    }
+
+    .consultation-bottom-image {
+        width: auto;
+        height: 100%;
+    }
+
+    .consultation-bottom-information {
+        /* растягиваем ячейку на всю ширину grid контейнера */
+        grid-column: 1 / -1; 
+        order: -1;
+        padding-left: 30px;
+        justify-content: end;
+        row-gap: 5px;
+    }
+
+    .consultation-bottom-description {
+        font-size: 18px;
+    }
+
+    .consultation-bottom-telephone {
+        font-size: 36px;
+    }
+
+    .consultation-bottom-lawyers {
+        align-items: start;
+        justify-content: center;
+    }
+
+    .consultation-bottom-lawyers-description {
+        font-size: 14px;
+    }
+
+    .consultation-bottom-lawyers-item:last-child a{
+        font-size: 12px;
+        /* Не нужно дополнительно задавать свойство высоты, так как до этого мы применили свойтсво aspect-ration со значением 1 */
+        width: 52px;
+    }
+
+    .consultation-bottom-lawyers-item:not(:first-child) {
+        /* при таком значении ширина элемента будет равна 184 пикслея, также, как и в макете */
+        margin-left: -16px;
+    }
+
+    .consultation-bottom-lawyers-image {
+        width: 52px;
+        height: 52px;
+    }
+    
+}
+
+@media (max-width: 700px) {
+    .consultation-item {
+        padding: 20px 6px 20px 20px;
+    }
+
+    .consultation-card-description {
+        font-size: 14px;
+    }
+
+    .consultation-card-telephone {
+        font-size: 18px;
+    }
+
+    .consultation-card-button {
+        font-size: 14px;
+    }
+
+    .consultation-bottom-lawyers-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    .consultation-bottom-lawyers-item:last-child a {
+        width: 40px;
+    }
+}
+
+@media (max-width: 445px) {
+    .consultation-bottom {
+        grid-template-columns: 149px 1fr;
+    }
+}
+
+
+@media (max-width: 390px) {
+    .consultation-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 370px) {
+    .consultation-bottom-lawyers-image {
+        width: 34px;
+        height: 34px;
+    }
+
+    .consultation-bottom-lawyers-item:last-child a {
+        width: 34px;
+    }
+}

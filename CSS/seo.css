@@ -1,0 +1,15 @@
+.seo-title:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.seo-description-body:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.seo-description:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.seo-button {
+    width: 100%;
+}

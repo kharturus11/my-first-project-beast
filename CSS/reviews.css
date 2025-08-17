@@ -1,0 +1,153 @@
+.reviews-title:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.slider {
+    position: relative;
+}
+
+.reviews-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+}
+
+.reviews-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 102px;
+    padding: 30px;
+    border: var(--border);
+    border-radius: 20px;
+}
+
+.reviews-card-head {
+    display: flex;
+    column-gap: 15px;
+}
+
+.reviews-card-head:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+.reviews-card-info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.reviews-card-name {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.38;
+}
+
+.reviews-card-date {
+    color: var(--color-light-gray);
+}
+
+.reviews-card-question {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}
+
+.reviews-card-question-title {
+    font-size: 14px;
+    color: var(--color-light-gray);
+    line-height: 1.35;
+}
+
+.reviews-card-question-text {
+    font-weight: 600;
+    color: var(--color-green);
+    line-height: 1.5;
+}
+
+.slider-button {
+    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    aspect-ratio: 1;
+    background-color: rgba(47, 43, 67, 0.04);
+    border-radius: 50%;
+    top: 50%;
+}
+
+.slider-button:hover {
+    background-color: var(--color-green);
+    color: var(--color-white);
+}
+
+.slider-button-left {
+    left: -72px;
+}
+
+.slider-button-right {
+    right: -72px;
+}
+
+/*! Медиазапросы  */
+
+@media (max-width: 1310px) {
+    .slider {
+        max-width: 800px;
+        margin-inline: auto;
+    }
+
+    .reviews-list {
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 993px) {
+    .slider {
+        width: 100%;
+    }
+
+    .reviews-list {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .reviews-card {
+        width: 320px;
+    }
+
+    .slider-button {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .reviews-list {
+        column-gap: 10px;
+    }
+
+    .reviews-card {
+        row-gap: 82px;
+    }
+
+    .reviews-card-head:not(:last-child) {
+        margin-bottom: 16px;
+    }
+
+    .reviews-card-name {
+        font-size: 16px;
+    }
+
+    .reviews-card-date {
+        font-size: 12px;
+    }
+
+    .reviews-card-question-title {
+        font-size: 12px;
+    }
+
+    .reviews-card-question-text {
+        font-size: 14px;
+    }
+}
